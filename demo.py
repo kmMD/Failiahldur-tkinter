@@ -6,8 +6,6 @@
 #5. Kaustad
 #6. Rekursiooniga kausta leidmine
 #7. Faili nime muutmine
-#test
-#test2
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
