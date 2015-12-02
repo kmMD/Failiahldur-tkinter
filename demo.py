@@ -1,16 +1,17 @@
 #Probleemid:
-#1. Skrollimine
+#1. Skrollimine, kaustad ja kausta leidmine.
 #2. Nupp saada
 #3. Saadud failide aken
 #4. Teatised
 #5. Kaustad
 #6. Rekursiooniga kausta leidmine
 #7. Faili nime muutmine
-#tooda see 
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 import os
+from os.path import isdir
+
 
 valitud_failid1=[]
     
@@ -32,8 +33,10 @@ def impordi_faile():   #impordib failid sisestatud kausta nimest
         i = 1
         for fail in failid[0:]:
             tekst = fail + "\n"
-            tahvel1.create_text(5,5+15*(i-1),text=tekst,anchor=NW,fill='black', activefill='grey')
-            i += 1
+            rada=path+"\\"+fail
+            if not isdir(rada):
+                tahvel1.create_text(5,5+15*(i-1),text=tekst,anchor=NW,fill='black', activefill='grey')
+                i += 1
         
 
     raam2=Tk()
@@ -92,9 +95,12 @@ silt.place(x=20,y=10)
 silt=ttk.Label(raam, text='Kätte saadud failid:')
 silt.place(x=520,y=10)
 
-tahvel1=Canvas(raam, width=350, height=640, background='white')
+tahvel1=Canvas(raam, width=350, height=640, background='white',yscrollincrement=0, yscrollcommand=10000)
 tahvel1.grid()
 tahvel1.place(x=20, y=30)
+scrollbar1=Scrollbar(raam,orient=VERTICAL)
+scrollbar1.place(x=370, y=30)
+#scrollbar1.set(0,10000)
 
 tahvel2=Canvas(raam, width=350, height=640, background='white')
 tahvel2.grid()
@@ -108,5 +114,9 @@ tahvel1.bind('<Double-Button-1>',ava)
 
 
 
+
+
+
 raam.mainloop()
+
 
