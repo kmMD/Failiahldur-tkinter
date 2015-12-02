@@ -22,7 +22,7 @@ def impordi_faile():   #impordib failid sisestatud kausta nimest
         raam2.destroy()
 
         failid = []
-        path = os.getcwd() + "\\"+str(kausta_nimi)
+        path = os.getcwd() + "/"+str(kausta_nimi)
 
         for fail in os.listdir(path):
             failid.append(fail)
