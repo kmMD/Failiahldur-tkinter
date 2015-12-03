@@ -6,8 +6,8 @@ host = socket.gethostname()
 port = 10110
 s.connect(('172.19.22.74', port))
 print(host)
-nimi='Projekt.txt'
-fail=open(nimi)
+nimi='oeldis.txt'
+fail=open(nimi, encoding="utf-8")
 s.listen(1)
 saadetised=[]
 while True:
