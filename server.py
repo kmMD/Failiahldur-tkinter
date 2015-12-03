@@ -4,7 +4,7 @@ import sys
 s = socket.socket()
 host = socket.gethostname()
 port = 10110
-s.bind((host, port))
+s.connect(('172.19.22.74', port))
 print(host)
 nimi='Projekt.txt'
 fail=open(nimi)
