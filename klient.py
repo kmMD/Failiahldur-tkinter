@@ -3,16 +3,14 @@ import sys
 import os 
 
 s = socket.socket()
-host = socket.gethostname()
+host = '172.19.22.74'
 port = 10110
-print(host)
+
 
 s.connect((host, port))
 sisu=(s.recv(1024).decode())
-print(sisu)
 jupid=sisu.split('$$')
 nimi=jupid[0]
-print(nimi)
 save_path=os.getcwd()+"/Saadetised"
 complete_name=os.path.join(save_path,nimi)
 uus_fail=open(complete_name,'w')
