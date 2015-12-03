@@ -1,0 +1,4 @@
+Herman Aadamson ja Kristjan Kirjanen
+
+Projekti teema:
+MP3 failide haldaja kasutades tkinter moodulit
